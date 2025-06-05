@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surveys</title>
+    <link href="/css/survey.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex justify-center items-start min-h-screen py-8">
+    <div class="container bg-white shadow-lg rounded-xl p-8 max-w-4xl w-full mx-4 sm:mx-auto">
+        <header class="flex flex-col sm:flex-row justify-between items-center mb-8 pb-4 border-b border-gray-200">
+            <h1 class="text-2xl font-bold text-gray-800 mb-4 sm:mb-0">_Surveys</h1>
+            <nav class="flex space-x-6">
+                <a href="/fill-survey" class="text-blue-600 hover:text-blue-800 font-medium whitespace-nowrap">FILL OUT SURVEY</a>
+                <a href="/view-results" class="text-gray-600 hover:text-gray-800 font-medium whitespace-nowrap">VIEW SURVEY RESULTS</a>
+            </nav>
+        </header>
+
+        <form id="surveyForm" class="space-y-6">
+            <section class="personal-details">
+                <h2 class="text-xl font-semibold text-gray-700 mb-4">Personal Details :</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="fullName" class="block text-sm font-medium text-gray-700 mb-1">Full Names</label>
+                        <input type="text" id="fullName" name="fullName" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                        <input type="email" id="email" name="email" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" required>
+                    </div>
+                    <div>
+                        <label for="dob" class="block text-sm font-medium text-gray-700 mb-1">Date of Birth</label>
+                        <input type="date" id="dob" name="dob" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" required>
+                    </div>
+                    <div>
+                        <label for="contactNumber" class="block text-sm font-medium text-gray-700 mb-1">Contact Number</label>
+                        <input type="tel" id="contactNumber" name="contactNumber" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" required>
+                    </div>
+                </div>
+            </section>
+
+            <section class="food-checkbox mt-8">
+                <h2 class="text-xl font-semibold text-gray-700 mb-4">What is your favorite food ?</h2>
+                <div class="flex flex-wrap gap-4 items-center">
+                    <div class="flex items-center">
+                        <input type="checkbox" id="foodPizza" name="favoriteFood" value="Pizza" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500 rounded-full">
+                        <label for="foodPizza" class="ml-2 text-gray-700">Pizza</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="foodPasta" name="favoriteFood" value="Pasta" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500 rounded-full">
+                        <label for="foodPasta" class="ml-2 text-gray-700">Pasta</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="foodPapWors" name="favoriteFood" value="Pap and Wors" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500 rounded-full">
+                        <label for="foodPapWors" class="ml-2 text-gray-700">Pap and Wors</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="foodOther" name="favoriteFood" value="Other" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500 rounded-full">
+                        <label for="foodOther" class="ml-2 text-gray-700">Other</label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="agreement-rating mt-8">
+                <h2 class="text-xl font-semibold text-gray-700 mb-4">Please rate your level of agreement on a scale from 1 to 5, with 1 being "strongly agree" and 5 being "strongly disagree."</h2>
+                <div class="overflow-x-auto">
+                    <table class="survey-table min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"></th>
+                                <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Strongly Agree</th>
+                                <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Agree</th>
+                                <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Neutral</th>
+                                <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Disagree</th>
+                                <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Strongly Disagree</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">I like to watch movies</td>
+                                
+                                <td class="px-6 py-4 whitespace-nowrap text-center"><input type="radio" name="moviesRating" value="1" required></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center"><input type="radio" name="moviesRating" value="2"></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center"><input type="radio" name="moviesRating" value="3"></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center"><input type="radio" name="moviesRating" value="4"></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center"><input type="radio" name="moviesRating" value="5"></td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">I like to listen to radio</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center"><input type="radio" name="radioRating" value="1" required></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center"><input type="radio" name="radioRating" value="2"></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center"><input type="radio" name="radioRating" value="3"></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center"><input type="radio" name="radioRating" value="4"></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center"><input type="radio" name="radioRating" value="5"></td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">I like to eat out</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center"><input type="radio" name="eatOutRating" value="1" required></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center"><input type="radio" name="eatOutRating" value="2"></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center"><input type="radio" name="eatOutRating" value="3"></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center"><input type="radio" name="eatOutRating" value="4"></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center"><input type="radio" name="eatOutRating" value="5"></td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">I like to watch TV</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center"><input type="radio" name="tvRating" value="1" required></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center"><input type="radio" name="tvRating" value="2"></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center"><input type="radio" name="tvRating" value="3"></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center"><input type="radio" name="tvRating" value="4"></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center"><input type="radio" name="tvRating" value="5"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <div class="flex justify-center mt-8">
+                <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-md transition duration-300 ease-in-out shadow-md">
+                    SUBMIT
+                </button>
+            </div>
+        </form>
+    </div>
+
+
+    <div class="message-box-overlay" id="messageBoxOverlay"></div>
+    <div class="message-box" id="messageBox">
+        <p id="messageBoxText"></p>
+        <button id="messageBoxClose">OK</button>
+    </div>
+
+    <script src="/js/survey.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Results</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/css/result.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex justify-center items-start min-h-screen py-8">
+    <div class="container bg-white shadow-lg rounded-xl p-8 max-w-4xl w-full mx-4 sm:mx-auto">
+        <header class="flex flex-col sm:flex-row justify-between items-center mb-8 pb-4 border-b border-gray-200">
+            <h1 class="text-2xl font-bold text-gray-800 mb-4 sm:mb-0">_Surveys</h1>
+            <nav class="flex space-x-6">
+                <a href="/fill-survey" class="text-gray-600 hover:text-gray-800 font-medium whitespace-nowrap">FILL OUT SURVEY</a>
+                <a href="/view-results" class="text-blue-600 hover:text-blue-800 font-medium whitespace-nowrap">VIEW SURVEY RESULTS</a>
+            </nav>
+        </header>
+
+        <section class="survey-results">
+            <h2 class="text-2xl font-bold text-gray-800 text-center mb-6">Survey Results</h2>
+
+            <div id="resultsContent" class="space-y-4">
+                <div class="result-item bg-gray-50 rounded-md">
+                    <span class="result-label">Total number of surveys :</span>
+                    <span id="totalSurveys" class="result-value"># surveys</span>
+                </div>
+                <div class="result-item bg-gray-50 rounded-md">
+                    <span class="result-label">Average Age :</span>
+                    <span id="averageAge" class="result-value"># average age</span>
+                </div>
+                <div class="result-item bg-gray-50 rounded-md">
+                    <span class="result-label">Oldest person who participated in survey :</span>
+                    <span id="oldestPersonAge" class="result-value"># max age</span>
+                </div>
+                <div class="result-item bg-gray-50 rounded-md">
+                    <span class="result-label">Youngest person who participated in survey :</span>
+                    <span id="youngestPersonAge" class="result-value"># min age</span>
+                </div>
+
+                <hr class="my-6 border-t border-gray-200">
+
+                <div class="result-item bg-gray-50 rounded-md">
+                    <span class="result-label">Percentage of people who like Pizza :</span>
+                    <span id="pizzaPercentage" class="result-value"># % Pizza</span>
+                </div>
+                <div class="result-item bg-gray-50 rounded-md">
+                    <span class="result-label">Percentage of people who like Pasta :</span>
+                    <span id="pastaPercentage" class="result-value"># % Pasta</span>
+                </div>
+                <div class="result-item bg-gray-50 rounded-md">
+                    <span class="result-label">Percentage of people who like Pap and Wors :</span>
+                    <span id="papWorsPercentage" class="result-value"># % Pap and Wors</span>
+                </div>
+
+                <hr class="my-6 border-t border-gray-200">
+
+                <div class="result-item bg-gray-50 rounded-md">
+                    <span class="result-label">People who like to watch movies :</span>
+                    <span id="moviesRatingAvg" class="result-value"># average of rating</span>
+                </div>
+                <div class="result-item bg-gray-50 rounded-md">
+                    <span class="result-label">People who like to listen to radio :</span>
+                    <span id="radioRatingAvg" class="result-value"># average of rating</span>
+                </div>
+                <div class="result-item bg-gray-50 rounded-md">
+                    <span class="result-label">People who like to eat out :</span>
+                    <span id="eatOutRatingAvg" class="result-value"># average of rating</span>
+                </div>
+                <div class="result-item bg-gray-50 rounded-md">
+                    <span class="result-label">People who like to watch TV :</span>
+                    <span id="tvRatingAvg" class="result-value"># average of rating</span>
+                </div>
+            </div>
+
+            <div id="noSurveysMessage" class="hidden text-center text-gray-600 text-lg py-10">
+                No Surveys Available.
+            </div>
+        </section>
+    </div>
+
+    <div class="message-box-overlay" id="messageBoxOverlay"></div>
+    <div class="message-box" id="messageBox">
+        <p id="messageBoxText"></p>
+        <button id="messageBoxClose">OK</button>
+    </div>
+    <script src="/js/result.js"></script>
+</body>
+</html>
